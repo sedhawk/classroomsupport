@@ -2,7 +2,7 @@
 require 'APIEndpoint.php';
 require 'config.php';
 
-$tables = ['person', 'campus', 'images', 'room_type', 'building', 'department', 'room', 'department', 'department_person'];
+$tables = ['person', 'campus', 'images', 'room_type', 'building', 'department', 'room', 'department', 'department_person', 'device_type'];
 $endpoints = [];
 foreach($tables as $table)
 {
