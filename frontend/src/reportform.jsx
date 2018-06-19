@@ -13,16 +13,16 @@ class ReportForm extends React.Component {
 			display: 'flex',
 			flexDirection: 'column',
 			minWidth: '100px',
-			padding: '10px'
+			padding: '15px'
 		}
-  	return (
-		<div style={style}>
-			<Label>{title}</Label>
-			<select name={title} >
-				<option value="any">Any</option>	
-			</select>
-		</div>
-  	);
+		return (
+			<div style={style}>
+				<Label>{title}</Label>
+				<select name={title} >
+					<option value="any">Any</option>	
+				</select>
+			</div>
+		);
 	}
 	
 	onToggle() {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Header } from './header.jsx';
 import { ReportForm } from './reportform.jsx';
+import { RoomManager } from './roommanager.jsx';
 import logo from './logo.svg';
 import './App.css';
 
@@ -11,6 +12,7 @@ class App extends Component {
       <div className="App">
 	  	<Header/>
 		<ReportForm/>
+		<RoomManager/>
       </div>
      );
    }
