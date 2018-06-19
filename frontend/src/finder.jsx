@@ -59,7 +59,7 @@ class Finder extends React.Component {
 					id="accordion-controlled-example"
 					activeKey={this.state.activeKey}
 					onSelect={this.handleSelect}
-					class="panel-width"
+					className="panel-width"
 				  >
 					<Panel eventKey="1">
 					  <Panel.Heading>
