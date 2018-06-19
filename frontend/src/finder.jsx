@@ -1,5 +1,6 @@
 import React from 'react';
 import { Label, ButtonToolbar, Panel, PanelGroup } from 'react-bootstrap';
+import Toggle from 'react-toggle';
 
 class Finder extends React.Component {
 	
@@ -19,7 +20,7 @@ class Finder extends React.Component {
 			</div>	
 		);
 	}
-
+	
 	constructor(props, context) {
 		super(props, context);
 
@@ -50,11 +51,15 @@ class Finder extends React.Component {
 			);
 		
 			return (
+				<div>
+				<label>{buttonsInstance}</label>
+
 				  <PanelGroup
 					accordion
 					id="accordion-controlled-example"
 					activeKey={this.state.activeKey}
 					onSelect={this.handleSelect}
+					class="panel-width"
 				  >
 					<Panel eventKey="1">
 					  <Panel.Heading>
@@ -111,6 +116,7 @@ class Finder extends React.Component {
 					  <Panel.Body collapsible>Panel content 9</Panel.Body>
 					</Panel>
 				  </PanelGroup>
+				  </div>
 				);
 			  }
 	}
