@@ -6,6 +6,20 @@
 	text-align: left;
 }
 
+.App-right {
+	text-align: right;
+ }
+
+.react-switch {
+	vertical-align: middle;
+	margin-left: 4px;
+ } 
+
+.rowA {
+	display:flex; 
+	flex-direction:row;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;

@@ -14,8 +14,9 @@ class App extends Component {
 		<ReportForm/>
 		<RoomManager/>
       </div>
-     );
-   }
-} 
+      );
+    }
+ } 
+
 
 export default App;

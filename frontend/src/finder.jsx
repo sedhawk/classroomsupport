@@ -1,8 +1,9 @@
 import React from 'react';
-import { Label, ButtonToolbar, Panel, PanelGroup } from 'react-bootstrap';
-import Toggle from 'react-toggle';
+import { Grid, Row, Col, Label, Button, ButtonToolbar, Panel, PanelGroup } from 'react-bootstrap';
+//import Toggle from 'react-toggle';
+import { editSwitch } from './editSwitch';
 
-class Finder extends React.Component {
+class Finder extends React.Component { 
 	
 	renderDropdownButton(title, i){
 		let style = {
@@ -20,14 +21,15 @@ class Finder extends React.Component {
 			</div>	
 		);
 	}
-	
+
 	constructor(props, context) {
 		super(props, context);
 
 		this.handleSelect = this.handleSelect.bind(this);
-
+		this.handleChange = this.handleChange.bind(this);
 		this.state = {
-		  activeKey: '1'
+			activeKey: '1',
+		  	checked: false
 		};
 	  }
 
@@ -35,7 +37,11 @@ class Finder extends React.Component {
 		this.setState({ activeKey });
 	  }
 
-	  render() {
+	  handleChange(checked) {
+		this.setState({ checked });
+	  }
+	
+	  render() { 
 
 			let style = {
 				display: 'flex',
@@ -49,11 +55,37 @@ class Finder extends React.Component {
 					</ButtonToolbar>
 				</div>
 			);
+/*			const editSwitch = (
+				<label>
+					<Toggle
+						defaultChecked={this.state.baconIsReady}
+						onChange={this.handleBaconChange} />
+					<span>Wrapper label tag</span>
+				</label>
+			);
+*/
 		
 			return (
 				<div>
-				<label>{buttonsInstance}</label>
-
+					<Grid>
+					  <Row className="App-left">
+						<Col xs={12} md={8}>
+						  <code> { buttonsInstance }</code>
+						</Col>
+						<Col xs={6} md={4}>
+							<code>
+								<label htmlFor="normal-switch">
+									<span>{ editSwitch }</span>
+									<editSwitch
+									  onChange={this.handleChange}
+									  checked={this.state.checked}
+									  id="normal-switch"
+									/>
+								</label> 
+							</code>
+						</Col>
+					  </Row>
+					</Grid>
 				  <PanelGroup
 					accordion
 					id="accordion-controlled-example"
@@ -65,57 +97,58 @@ class Finder extends React.Component {
 					  <Panel.Heading>
 						<Panel.Title toggle>Department</Panel.Title>
 					  </Panel.Heading>
-					  <Panel.Body collapsible>Panel content 1</Panel.Body>
+				  <Panel.Body collapsible><input type="text" name="department"/><Button bsStyle="primary" bsSize="xsmall">Save</Button></Panel.Body>
 					</Panel>
 					<Panel eventKey="2">
 					  <Panel.Heading>
 						<Panel.Title toggle>Room Type</Panel.Title>
 					  </Panel.Heading>
-					  <Panel.Body collapsible>Panel content 2</Panel.Body>
+					  <Panel.Body collapsible><input type="text" name="room_type"/><Button bsStyle="primary" bsSize="xsmall">Save</Button></Panel.Body>
 					</Panel>
 					<Panel eventKey="3">
 					  <Panel.Heading>
 						<Panel.Title toggle>Person</Panel.Title>
 					  </Panel.Heading>
-					  <Panel.Body collapsible>Panel content 3</Panel.Body>
+					  <Panel.Body collapsible><input type="text" name="person"/><Button bsStyle="primary" bsSize="xsmall">Save</Button></Panel.Body>
 					</Panel>
 					<Panel eventKey="4">
 					  <Panel.Heading>
 						<Panel.Title toggle>Device Type</Panel.Title>
 					  </Panel.Heading>
-					  <Panel.Body collapsible>Panel content 4</Panel.Body>
+					  <Panel.Body collapsible><input type="text" name="device_type"/><Button bsStyle="primary" bsSize="xsmall">Save</Button></Panel.Body>
 					</Panel>
 					<Panel eventKey="5">
 					  <Panel.Heading>
 						<Panel.Title toggle>Devices</Panel.Title>
 					  </Panel.Heading>
-					  <Panel.Body collapsible>Panel content 5</Panel.Body>
+					  <Panel.Body collapsible><input type="text" name="devices"/><Button bsStyle="primary" bsSize="xsmall">Save</Button></Panel.Body>
 					</Panel>
 					<Panel eventKey="6">
 					  <Panel.Heading>
 						<Panel.Title toggle>Vendor</Panel.Title>
 					  </Panel.Heading>
-					  <Panel.Body collapsible>Panel content 6</Panel.Body>
+					  <Panel.Body collapsible><input type="text" name="vendor"/><Button bsStyle="primary" bsSize="xsmall">Save</Button></Panel.Body>
 					</Panel>
 					<Panel eventKey="7">
 					  <Panel.Heading>
 						<Panel.Title toggle>Programs</Panel.Title>
 					  </Panel.Heading>
-					  <Panel.Body collapsible>Panel content 7</Panel.Body>
+					  <Panel.Body collapsible><input type="text" name="programs"/><Button bsStyle="primary" bsSize="xsmall">Upload</Button></Panel.Body>
 					</Panel>
 					<Panel eventKey="8">
 					  <Panel.Heading>
 						<Panel.Title toggle>Images</Panel.Title>
 					  </Panel.Heading>
-					  <Panel.Body collapsible>Panel content 8</Panel.Body>
+					  <Panel.Body collapsible><input type="text" name="images"/><Button bsStyle="primary" bsSize="xsmall">Upload</Button></Panel.Body>
 					</Panel>
 					<Panel eventKey="9">
 					  <Panel.Heading>
 						<Panel.Title toggle>Notes</Panel.Title>
 					  </Panel.Heading>
-					  <Panel.Body collapsible>Panel content 9</Panel.Body>
+					  <Panel.Body collapsible><input type="text" name="Misc_notes"/><Button bsStyle="primary" bsSize="xsmall">Save</Button></Panel.Body>
 					</Panel>
 				  </PanelGroup>
+				  <hr/>
 				  </div>
 				);
 			  }
