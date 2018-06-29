@@ -54,7 +54,7 @@ class Finder extends React.Component {
 						{BUTTONS.map(this.renderDropdownButton)}
 					</ButtonToolbar>
 				</div>
-			);
+			); 
 /*			const editSwitch = (
 				<label>
 					<Toggle
@@ -97,37 +97,37 @@ class Finder extends React.Component {
 					  <Panel.Heading>
 						<Panel.Title toggle>Department</Panel.Title>
 					  </Panel.Heading>
-				  <Panel.Body collapsible><input type="text" name="department"/><Button bsStyle="primary" bsSize="xsmall">Save</Button></Panel.Body>
+				  <Panel.Body collapsible><textarea readOnly="true" class="text-area">Read Only text area. Department name(s) can be added with dropdown menu below</textarea><select><option>DeptName</option></select><Button bsStyle="primary" bsSize="xsmall">+</Button></Panel.Body>
 					</Panel>
 					<Panel eventKey="2">
 					  <Panel.Heading>
 						<Panel.Title toggle>Room Type</Panel.Title>
 					  </Panel.Heading>
-					  <Panel.Body collapsible><input type="text" name="room_type"/><Button bsStyle="primary" bsSize="xsmall">Save</Button></Panel.Body>
+					  <Panel.Body collapsible><textarea readOnly="true" class="text-area">Read Only text area. Room types(s) can be added with dropdown menu below</textarea><select><option>collaboration lab</option></select><Button bsStyle="primary" bsSize="xsmall">+</Button></Panel.Body>
 					</Panel>
 					<Panel eventKey="3">
 					  <Panel.Heading>
 						<Panel.Title toggle>Person</Panel.Title>
 					  </Panel.Heading>
-					  <Panel.Body collapsible><input type="text" name="person"/><Button bsStyle="primary" bsSize="xsmall">Save</Button></Panel.Body>
+					  <Panel.Body collapsible><textarea readOnly="true" class="text-area">Read Only text area. Main POC name(s) can be added with dropdown menu below</textarea><select><option>Billy Joe</option></select><Button bsStyle="primary" bsSize="xsmall">+</Button></Panel.Body>
 					</Panel>
 					<Panel eventKey="4">
 					  <Panel.Heading>
 						<Panel.Title toggle>Device Type</Panel.Title>
 					  </Panel.Heading>
-					  <Panel.Body collapsible><input type="text" name="device_type"/><Button bsStyle="primary" bsSize="xsmall">Save</Button></Panel.Body>
+					  <Panel.Body collapsible><textarea readOnly="true" class="text-area">Read Only text area. Device type(s) can be added with dropdown menu below</textarea><select><option>Processor</option><option>Extron TP</option></select><Button bsStyle="primary" bsSize="xsmall">+</Button></Panel.Body>
 					</Panel>
 					<Panel eventKey="5">
 					  <Panel.Heading>
 						<Panel.Title toggle>Devices</Panel.Title>
 					  </Panel.Heading>
-					  <Panel.Body collapsible><input type="text" name="devices"/><Button bsStyle="primary" bsSize="xsmall">Save</Button></Panel.Body>
+					  <Panel.Body collapsible><textarea readOnly="true" class="text-area">Read Only text area. Specific device names can be added with dropdown menu below</textarea><select><option>DeptName</option></select><Button bsStyle="primary" bsSize="xsmall">+</Button></Panel.Body>
 					</Panel>
 					<Panel eventKey="6">
 					  <Panel.Heading>
 						<Panel.Title toggle>Vendor</Panel.Title>
 					  </Panel.Heading>
-					  <Panel.Body collapsible><input type="text" name="vendor"/><Button bsStyle="primary" bsSize="xsmall">Save</Button></Panel.Body>
+					  <Panel.Body collapsible><textarea readOnly="true" class="text-area">Read Only text area. Vendor name(s) can be added with dropdown menu below</textarea><select><option>Troxel</option><option>CCS</option><option>In House</option></select><Button bsStyle="primary" bsSize="xsmall">+</Button></Panel.Body>
 					</Panel>
 					<Panel eventKey="7">
 					  <Panel.Heading>

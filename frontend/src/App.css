@@ -10,6 +10,10 @@
 	text-align: right;
  }
 
+ .text-area {
+	 width: 100%;
+	 border: none;
+ } 
 .react-switch {
 	vertical-align: middle;
 	margin-left: 4px;
