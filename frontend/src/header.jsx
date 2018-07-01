@@ -26,6 +26,7 @@ export class Header extends React.Component {
 							  <MenuItem divider />
 							  <MenuItem eventKey={3.4}>Separated link</MenuItem>
 							</NavDropdown>
+							
 	  					</Nav>
 					</Navbar>	
 			</header>
