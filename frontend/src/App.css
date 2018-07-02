@@ -4,6 +4,9 @@
 
 .App-left {
 	text-align: left;
+	display: flex;
+	justify-content: flex-start;
+	padding-top: 0px;
 }
 
 .App-right {
@@ -14,7 +17,7 @@
 	 width: 100%;
 	 border: none;
  } 
-.react-switch {
+.react-switch { 
 	vertical-align: middle;
 	margin-left: 4px;
  } 

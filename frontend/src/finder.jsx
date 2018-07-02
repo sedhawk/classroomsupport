@@ -1,7 +1,9 @@
 import React from 'react';
 import { Grid, Row, Col, Label, Button, ButtonToolbar, Panel, PanelGroup } from 'react-bootstrap';
+import Switch from "react-switch";
 //import Toggle from 'react-toggle';
-import { editSwitch } from './editSwitch';
+import { EditSwitch } from './editSwitch';
+import { HiddenSection } from './HiddenSection';
 
 class Finder extends React.Component { 
 	
@@ -26,10 +28,8 @@ class Finder extends React.Component {
 		super(props, context);
 
 		this.handleSelect = this.handleSelect.bind(this);
-		this.handleChange = this.handleChange.bind(this);
 		this.state = {
 			activeKey: '1',
-		  	checked: false
 		};
 	  }
 
@@ -37,10 +37,6 @@ class Finder extends React.Component {
 		this.setState({ activeKey });
 	  }
 
-	  handleChange(checked) {
-		this.setState({ checked });
-	  }
-	
 	  render() { 
 
 			let style = {
@@ -69,20 +65,14 @@ class Finder extends React.Component {
 				<div>
 					<Grid>
 						<Row className="App-left">
-							<Col xs={12} md={8}>
-						  		<code> { buttonsInstance }</code>
+							<Col xs={6} md={8}>
+						  		{ buttonsInstance }
 							</Col>
 							<Col xs={6} md={4}>
-								<code>
-									<label htmlFor="normal-switch">
-										<span>{ editSwitch }</span>
-										<editSwitch
-									  		onChange={this.handleChange}
-									  		checked={this.state.checked}
-									  		id="normal-switch"
-										/>
-									</label> 
-								</code>
+								<EditSwitch
+									checked={this.state.checked}
+									className="react-switch"
+								/>
 							</Col>
 					  	</Row>
 					</Grid>
@@ -106,6 +96,9 @@ class Finder extends React.Component {
 								<option>DeptName</option>
 							</select>
 							<Button bsStyle="primary" bsSize="xsmall">+</Button>
+							<HiddenSection hiddenText="..." visibleText="-">
+								<h4> Hidden user auto tag info </h4>
+							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
 

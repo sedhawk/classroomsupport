@@ -2,7 +2,7 @@ import React  from 'react';
 import { Label } from 'react-bootstrap';
 import Switch from "react-switch";
 
-class editSwitch extends React.Component {
+class EditSwitch extends React.Component {
   constructor() {
     super();
     this.state = { checked: false };
@@ -14,21 +14,21 @@ class editSwitch extends React.Component {
   }
 
   render() {
-    return (
+	  return (
       <div className="example">
-        <label htmlFor="normal-switch">
-          <span>Switch with default style</span>
+	  	<Label htmlFor="normal-switch">
           <Switch
             onChange={this.handleChange}
             checked={this.state.checked}
             className="react-switch"
             id="normal-switch"
           />
-        </label>
+		 </Label>
         <p>Edit mode is <span>{this.state.checked ? 'on' : 'off'}</span>.</p>
       </div>
     );
+	  
   }
 }
 
-export { editSwitch }
+export { EditSwitch }
