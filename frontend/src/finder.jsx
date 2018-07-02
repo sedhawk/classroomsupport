@@ -96,7 +96,7 @@ class Finder extends React.Component {
 								<option>DeptName</option>
 							</select>
 							<Button bsStyle="primary" bsSize="xsmall">+</Button>
-							<HiddenSection hiddenText="..." visibleText="-">
+							<HiddenSection hiddenText="..." visibleText="_">
 								<h4> Hidden user auto tag info </h4>
 							</HiddenSection>		
 						</Panel.Body>
@@ -113,6 +113,9 @@ class Finder extends React.Component {
 								<option>collaboration lab</option>
 							</select>
 							<Button bsStyle="primary" bsSize="xsmall">+</Button>
+							<HiddenSection hiddenText="..." visibleText="_">
+								<h4> Hidden user auto tag info </h4>
+							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
 
@@ -127,6 +130,9 @@ class Finder extends React.Component {
 								<option>Billy Joe</option>
 							</select>
 							<Button bsStyle="primary" bsSize="xsmall">+</Button>
+							<HiddenSection hiddenText="..." visibleText="_">
+								<h4> Hidden user auto tag info </h4>
+							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
 
@@ -141,6 +147,9 @@ class Finder extends React.Component {
 								<option>Processor</option><option>Extron TP</option>
 							</select>
 							<Button bsStyle="primary" bsSize="xsmall">+</Button>
+							<HiddenSection hiddenText="..." visibleText="_">
+								<h4> Hidden user auto tag info </h4>
+							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
 
@@ -153,6 +162,9 @@ class Finder extends React.Component {
 							<textarea readOnly="true" class="text-area">Read Only text area. Specific device names can be added with dropdown menu below</textarea>
 							<select><option>DeptName</option></select>
 							<Button bsStyle="primary" bsSize="xsmall">+</Button>
+							<HiddenSection hiddenText="..." visibleText="_">
+								<h4> Hidden user auto tag info </h4>
+							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
 
@@ -168,6 +180,9 @@ class Finder extends React.Component {
 								<option>In House</option>
 							</select>
 							<Button bsStyle="primary" bsSize="xsmall">+</Button>
+							<HiddenSection hiddenText="..." visibleText="_">
+								<h4> Hidden user auto tag info </h4>
+							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
 
@@ -179,6 +194,9 @@ class Finder extends React.Component {
 					  	<Panel.Body collapsible>
 							<input type="text" name="programs"/>
 							<Button bsStyle="primary" bsSize="xsmall">Upload</Button>
+							<HiddenSection hiddenText="..." visibleText="_">
+								<h4> Hidden user auto tag info </h4>
+							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
 
@@ -190,6 +208,9 @@ class Finder extends React.Component {
 						<Panel.Body collapsible>
 							<input type="text" name="images"/>
 							<Button bsStyle="primary" bsSize="xsmall">Upload</Button>
+							<HiddenSection hiddenText="..." visibleText="_">
+								<h4> Hidden user auto tag info </h4>
+							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
 
@@ -201,6 +222,9 @@ class Finder extends React.Component {
 						<Panel.Body collapsible>
 							<input type="text" name="Misc_notes"/>
 							<Button bsStyle="primary" bsSize="xsmall">Save</Button>
+							<HiddenSection hiddenText="..." visibleText="_">
+								<h4> Hidden user auto tag info </h4>
+							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
 				  </PanelGroup>
