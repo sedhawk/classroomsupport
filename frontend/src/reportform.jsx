@@ -1,12 +1,12 @@
 import React from 'react';
-import { Col, MenuItem, ButtonToolbar, Label, Row, Button } from 'react-bootstrap';
+import { ButtonToolbar, Label, Button } from 'react-bootstrap';
 
 
 class ReportForm extends React.Component {
 	
 	state = {
 		isCollapsed: true
-	}	
+	} 	
 
 	renderDropdownButton(title, i) {
 		let style = {
@@ -23,7 +23,7 @@ class ReportForm extends React.Component {
 				</select>
 			</div>
 		);
-	}
+	} 
 	
 	onToggle() {
 		  this.setState({
@@ -42,13 +42,13 @@ class ReportForm extends React.Component {
 				<ButtonToolbar style={style}>
 					{BUTTONS.map(this.renderDropdownButton)}
 				</ButtonToolbar>
-				<Button bsStyle="primary" bsSize="xsmall">Generate Report</Button>
+				<Button bsStyle="primary" bsSize="xsmall">Generate</Button>
 			</div>
 		);
 
 		return (
 			<div>
-				<input type="checkbox" onClick={this.onToggle.bind(this)} /><label>&nbsp; Query Report</label>
+				<input type="checkbox" onClick={this.onToggle.bind(this)} /><label>&nbsp; Report(s) w/high charts</label>
 				{ this.state.isCollapsed === false ? buttonsInstance : null }
 				<hr/>
 			</div>

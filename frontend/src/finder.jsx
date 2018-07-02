@@ -1,9 +1,8 @@
 import React from 'react';
 import { Grid, Row, Col, Label, Button, ButtonToolbar, Panel, PanelGroup } from 'react-bootstrap';
-import Switch from "react-switch";
-//import Toggle from 'react-toggle';
 import { EditSwitch } from './editSwitch';
 import { HiddenSection } from './HiddenSection';
+import { Devices } from './tables/Devices';
 
 class Finder extends React.Component { 
 	
@@ -51,15 +50,6 @@ class Finder extends React.Component {
 					</ButtonToolbar>
 				</div>
 			); 
-/*			const editSwitch = (
-				<label>
-					<Toggle
-						defaultChecked={this.state.baconIsReady}
-						onChange={this.handleBaconChange} />
-					<span>Wrapper label tag</span>
-				</label>
-			);
-*/
 		
 			return (
 				<div>
@@ -91,7 +81,7 @@ class Finder extends React.Component {
 							<Panel.Title toggle>Department</Panel.Title>
 					  	</Panel.Heading>
 						<Panel.Body collapsible>
-							<textarea readOnly="true" class="text-area">Read Only text area. Department name(s) can be added with dropdown menu below</textarea>
+							<textarea readOnly="true" class="text-area">React Table Editable Content area. Department name(s) can be added with dropdown menu below</textarea>
 							<select>
 								<option>DeptName</option>
 							</select>
@@ -108,7 +98,7 @@ class Finder extends React.Component {
 							<Panel.Title toggle>Room Type</Panel.Title>
 						</Panel.Heading>
 						<Panel.Body collapsible>
-							<textarea readOnly="true" class="text-area">Read Only text area. Room types(s) can be added with dropdown menu below</textarea>
+							<textarea readOnly="true" class="text-area">React Table Editable Content area. Room types(s) can be added with dropdown menu below</textarea>
 							<select>
 								<option>collaboration lab</option>
 							</select>
@@ -125,7 +115,7 @@ class Finder extends React.Component {
 							<Panel.Title toggle>Person</Panel.Title>
 						</Panel.Heading>
 						<Panel.Body collapsible>
-							<textarea readOnly="true" class="text-area">Read Only text area. Main POC name(s) can be added with dropdown menu below</textarea>
+							<textarea readOnly="true" class="text-area">React Table Editable Content area. Main POC name(s) can be added with dropdown menu below</textarea>
 							<select>
 								<option>Billy Joe</option>
 							</select>
@@ -142,7 +132,7 @@ class Finder extends React.Component {
 							<Panel.Title toggle>Device Type</Panel.Title>
 						</Panel.Heading>
 						<Panel.Body collapsible>
-							<textarea readOnly="true" class="text-area">Read Only text area. Device type(s) can be added with dropdown menu below</textarea>
+							<textarea readOnly="true" class="text-area">React Table Editable Content area. Device type(s) can be added with dropdown menu below</textarea>
 							<select>
 								<option>Processor</option><option>Extron TP</option>
 							</select>
@@ -159,7 +149,9 @@ class Finder extends React.Component {
 							<Panel.Title toggle>Devices</Panel.Title>
 						</Panel.Heading>
 						<Panel.Body collapsible>
-							<textarea readOnly="true" class="text-area">Read Only text area. Specific device names can be added with dropdown menu below</textarea>
+							<textarea class="text-area">{ Devices }</textarea>
+							{/*
+							<textarea readOnly="true" class="text-area">React Table Editable Content Area. Specific device names can be added with dropdown menu below</textarea>*/}
 							<select><option>DeptName</option></select>
 							<Button bsStyle="primary" bsSize="xsmall">+</Button>
 							<HiddenSection hiddenText="..." visibleText="_">
@@ -174,7 +166,7 @@ class Finder extends React.Component {
 							<Panel.Title toggle>Vendor</Panel.Title>
 						</Panel.Heading>
 						<Panel.Body collapsible>
-							<textarea readOnly="true" class="text-area">Read Only text area. Vendor name(s) can be added with dropdown menu below</textarea>
+							<textarea readOnly="true" class="text-area">React Table Editable Content area. Vendor name(s) can be added with dropdown menu below</textarea>
 							<select>
 								<option>Troxel</option><option>CCS</option>
 								<option>In House</option>

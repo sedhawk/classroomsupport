@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "namor": "^1.0.1",
     "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4",
     "react-switch": "^3.0.4",
+    "react-table": "^6.8.6",
     "react-toggle": "^4.0.2"
   },
   "scripts": {
