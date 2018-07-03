@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid, Row, Col, Label, Button, ButtonToolbar, Panel, PanelGroup } from 'react-bootstrap';
 import { EditSwitch } from './editSwitch';
 import { HiddenSection } from './HiddenSection';
+import { TimeStamp } from './TimeStamp';
 import { Devices } from './tables/Devices';
 import { Person } from './tables/Person';
 import { DeviceType } from './tables/DeviceType';
@@ -93,7 +94,7 @@ class Finder extends React.Component {
 							</select>
 							<Button bsStyle="primary" bsSize="xsmall">+</Button>
 							<HiddenSection hiddenText="..." visibleText="_">
-								<p>Last modified by</p>
+								<TimeStamp/>
 							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
@@ -110,7 +111,7 @@ class Finder extends React.Component {
 							</select>
 							<Button bsStyle="primary" bsSize="xsmall">+</Button>
 							<HiddenSection hiddenText="..." visibleText="_">
-								<p>Last modified by</p>
+								<TimeStamp/>
 							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
@@ -127,7 +128,7 @@ class Finder extends React.Component {
 							</select>
 							<Button bsStyle="primary" bsSize="xsmall">+</Button>
 							<HiddenSection hiddenText="..." visibleText="_">
-								<p>Last modified by</p>
+								<TimeStamp/>
 							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
@@ -144,7 +145,7 @@ class Finder extends React.Component {
 							</select>
 							<Button bsStyle="primary" bsSize="xsmall">+</Button>
 							<HiddenSection hiddenText="..." visibleText="_">
-								<p>Last modified by</p>
+								<TimeStamp/>
 							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
@@ -159,7 +160,7 @@ class Finder extends React.Component {
 							<select><option>DeptName</option></select>
 							<Button bsStyle="primary" bsSize="xsmall">+</Button>
 							<HiddenSection hiddenText="..." visibleText="_">
-								<p>Last modified by</p>
+								<TimeStamp/>
 							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
@@ -177,7 +178,7 @@ class Finder extends React.Component {
 							</select>
 							<Button bsStyle="primary" bsSize="xsmall">+</Button>
 							<HiddenSection hiddenText="..." visibleText="_">
-								<p>Last modified by</p>
+								<TimeStamp/>
 							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
@@ -192,7 +193,7 @@ class Finder extends React.Component {
 							<input type="text" name="programs"/>
 							<Button bsStyle="primary" bsSize="xsmall">Upload</Button>
 							<HiddenSection hiddenText="..." visibleText="_">
-								<p>Last modified by</p>
+								<TimeStamp/>
 							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
@@ -206,7 +207,7 @@ class Finder extends React.Component {
 							<input type="text" name="images"/>
 							<Button bsStyle="primary" bsSize="xsmall">Upload</Button>
 							<HiddenSection hiddenText="..." visibleText="_">
-								<p>Last modified by</p>
+								<TimeStamp/>
 							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
@@ -220,7 +221,7 @@ class Finder extends React.Component {
 							<input type="text" name="Misc_notes"/>
 							<Button bsStyle="primary" bsSize="xsmall">Save</Button>
 							<HiddenSection hiddenText="..." visibleText="_">
-								<p>Last modified by</p>
+								<TimeStamp/>
 							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
