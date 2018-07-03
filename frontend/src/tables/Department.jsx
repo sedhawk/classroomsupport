@@ -5,7 +5,7 @@ import { makeData, Tips } from "./Utils";
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 
-class Devices extends Component {
+class Department extends Component {
   constructor() {
     super();
     this.state = {
@@ -39,30 +39,15 @@ renderEditable(cellInfo) {
           data={data}
           columns={[
             {
-              	Header: "Device Name",
-              	accessor: "deviceName",
+              	Header: "Department Name",
+              	accessor: "departmentName",
               	Cell: this.renderEditable
             },
             {
-              	Header: "Serial Number",
-              	accessor: "serialNumber",
+              	Header: "College",
+              	accessor: "college",
               	Cell: this.renderEditable
-            },
-            {
-              	Header: "Mac Address",
-			  	accessor: "mac",
-			  	Cell: this.renderEditable
-            },
-			{
-				Header: "IP Address",
-				accessor: "ip",
-				Cell: this.renderEditable
-			},
-			{
-				Header: "Warranty",
-				accessor: "warranty",
-              	Cell: this.renderEditable
-		  	}
+            }
           ]}
           defaultPageSize={5}
           className="-striped -highlight"
@@ -74,4 +59,4 @@ renderEditable(cellInfo) {
   }
 }
 
-export { Devices }
+export { Department }

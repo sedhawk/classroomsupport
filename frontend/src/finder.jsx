@@ -3,6 +3,12 @@ import { Grid, Row, Col, Label, Button, ButtonToolbar, Panel, PanelGroup } from 
 import { EditSwitch } from './editSwitch';
 import { HiddenSection } from './HiddenSection';
 import { Devices } from './tables/Devices';
+import { Person } from './tables/Person';
+import { DeviceType } from './tables/DeviceType';
+import { Department } from './tables/Department';
+import { RoomType } from './tables/RoomType';
+import { Vendor } from './tables/Vendor';
+import { Program } from './tables/Program';
 
 class Finder extends React.Component { 
 	
@@ -81,13 +87,13 @@ class Finder extends React.Component {
 							<Panel.Title toggle>Department</Panel.Title>
 					  	</Panel.Heading>
 						<Panel.Body collapsible>
-							<textarea readOnly="true" class="text-area">React Table Editable Content area. Department name(s) can be added with dropdown menu below</textarea>
+							<Department/>
 							<select>
 								<option>DeptName</option>
 							</select>
 							<Button bsStyle="primary" bsSize="xsmall">+</Button>
 							<HiddenSection hiddenText="..." visibleText="_">
-								<h4> Hidden user auto tag info </h4>
+								<p>Last modified by</p>
 							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
@@ -98,13 +104,13 @@ class Finder extends React.Component {
 							<Panel.Title toggle>Room Type</Panel.Title>
 						</Panel.Heading>
 						<Panel.Body collapsible>
-							<textarea readOnly="true" class="text-area">React Table Editable Content area. Room types(s) can be added with dropdown menu below</textarea>
+							<RoomType/>
 							<select>
 								<option>collaboration lab</option>
 							</select>
 							<Button bsStyle="primary" bsSize="xsmall">+</Button>
 							<HiddenSection hiddenText="..." visibleText="_">
-								<h4> Hidden user auto tag info </h4>
+								<p>Last modified by</p>
 							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
@@ -115,13 +121,13 @@ class Finder extends React.Component {
 							<Panel.Title toggle>Person</Panel.Title>
 						</Panel.Heading>
 						<Panel.Body collapsible>
-							<textarea readOnly="true" class="text-area">React Table Editable Content area. Main POC name(s) can be added with dropdown menu below</textarea>
+							<Person/>
 							<select>
 								<option>Billy Joe</option>
 							</select>
 							<Button bsStyle="primary" bsSize="xsmall">+</Button>
 							<HiddenSection hiddenText="..." visibleText="_">
-								<h4> Hidden user auto tag info </h4>
+								<p>Last modified by</p>
 							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
@@ -132,13 +138,13 @@ class Finder extends React.Component {
 							<Panel.Title toggle>Device Type</Panel.Title>
 						</Panel.Heading>
 						<Panel.Body collapsible>
-							<textarea readOnly="true" class="text-area">React Table Editable Content area. Device type(s) can be added with dropdown menu below</textarea>
+							<DeviceType/>
 							<select>
 								<option>Processor</option><option>Extron TP</option>
 							</select>
 							<Button bsStyle="primary" bsSize="xsmall">+</Button>
 							<HiddenSection hiddenText="..." visibleText="_">
-								<h4> Hidden user auto tag info </h4>
+								<p>Last modified by</p>
 							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
@@ -149,13 +155,11 @@ class Finder extends React.Component {
 							<Panel.Title toggle>Devices</Panel.Title>
 						</Panel.Heading>
 						<Panel.Body collapsible>
-							<textarea class="text-area">{ Devices }</textarea>
-							{/*
-							<textarea readOnly="true" class="text-area">React Table Editable Content Area. Specific device names can be added with dropdown menu below</textarea>*/}
+							<Devices/>
 							<select><option>DeptName</option></select>
 							<Button bsStyle="primary" bsSize="xsmall">+</Button>
 							<HiddenSection hiddenText="..." visibleText="_">
-								<h4> Hidden user auto tag info </h4>
+								<p>Last modified by</p>
 							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
@@ -166,14 +170,14 @@ class Finder extends React.Component {
 							<Panel.Title toggle>Vendor</Panel.Title>
 						</Panel.Heading>
 						<Panel.Body collapsible>
-							<textarea readOnly="true" class="text-area">React Table Editable Content area. Vendor name(s) can be added with dropdown menu below</textarea>
+							<Vendor/>
 							<select>
 								<option>Troxel</option><option>CCS</option>
 								<option>In House</option>
 							</select>
 							<Button bsStyle="primary" bsSize="xsmall">+</Button>
 							<HiddenSection hiddenText="..." visibleText="_">
-								<h4> Hidden user auto tag info </h4>
+								<p>Last modified by</p>
 							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
@@ -184,10 +188,11 @@ class Finder extends React.Component {
 							<Panel.Title toggle>Programs</Panel.Title>
 						</Panel.Heading>
 					  	<Panel.Body collapsible>
+							<Program/>
 							<input type="text" name="programs"/>
 							<Button bsStyle="primary" bsSize="xsmall">Upload</Button>
 							<HiddenSection hiddenText="..." visibleText="_">
-								<h4> Hidden user auto tag info </h4>
+								<p>Last modified by</p>
 							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
@@ -201,7 +206,7 @@ class Finder extends React.Component {
 							<input type="text" name="images"/>
 							<Button bsStyle="primary" bsSize="xsmall">Upload</Button>
 							<HiddenSection hiddenText="..." visibleText="_">
-								<h4> Hidden user auto tag info </h4>
+								<p>Last modified by</p>
 							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
@@ -215,7 +220,7 @@ class Finder extends React.Component {
 							<input type="text" name="Misc_notes"/>
 							<Button bsStyle="primary" bsSize="xsmall">Save</Button>
 							<HiddenSection hiddenText="..." visibleText="_">
-								<h4> Hidden user auto tag info </h4>
+								<p>Last modified by</p>
 							</HiddenSection>		
 						</Panel.Body>
 					</Panel>
