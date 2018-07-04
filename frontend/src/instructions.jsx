@@ -1,28 +1,35 @@
-import React from 'react';
-import { FormGroup, Form } from 'react-bootstrap';
+import React, { Component } from 'react';
 
-class Instructions extends React.Component {
+class Instructions extends Component {
 
-	FieldGroup({ id, label, help, ...props }) {
+	state = {
+		isCollapsed: true
+	}
+
+	onToggle() {
+		this.setState({
+			isCollapsed: !this.state.isCollapsed
+		});
+	}
+
+	render() {
+		
+		const textArea = (
+			<div>
+				<textarea className="text-area-notes">Shiz rizzle metus crackalackin arcu the bizzle fizzle. Gizzle posuere. Sizzle nizzle ante.</textarea>
+			</div>
+		);
+
 		return (
-			<FormGroup controlId={id}>
-		  	<ControlLabel>{label}</ControlLabel>
-		  	<FormControl {...props} />
-		  	{help && <HelpBlock>{help}</HelpBlock>}
-			</FormGroup>
-	  );
-	}	
+			<div>
+				<input type="checkbox" onClick={this.onToggle.bind(this)}/>
+				<label> &nbsp; Specialized Instructions</label>
+				{ this.state.isCollapsed === false ? textArea : null }
+				<hr/>
+			</div>
+		);
 
-	const formInstance = (
-		<form>	
-		 	<FormGroup controlId="formControlsTextarea">
-				<ControlLabel>Textarea</ControlLabel>
-			  	<FormControl componentClass="textarea" placeholder="textarea" />
-		 	</FormGroup>	
-		</form>
-	);
-
-	render(formInstance);
+	}
 }
 
 export { Instructions }

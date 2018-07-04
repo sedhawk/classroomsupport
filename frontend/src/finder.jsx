@@ -1,8 +1,12 @@
 import React from 'react';
 import { Grid, Row, Col, Label, Button, ButtonToolbar, Panel, PanelGroup } from 'react-bootstrap';
+import Box from 'react-layout-components';
 import { EditSwitch } from './editSwitch';
 import { HiddenSection } from './HiddenSection';
 import { TimeStamp } from './TimeStamp';
+import { Pictures }from './Pictures';
+import { Instructions } from './Instructions';
+import { History } from './History';
 import { Devices } from './tables/Devices';
 import { Person } from './tables/Person';
 import { DeviceType } from './tables/DeviceType';
@@ -81,7 +85,6 @@ class Finder extends React.Component {
 						onSelect={this.handleSelect}
 						className="panel-width"
 				  	>
-
 					{/* DEPARTMENT */}
 					<Panel eventKey="1">
 					  	<Panel.Heading>
@@ -227,6 +230,8 @@ class Finder extends React.Component {
 					</Panel>
 				  </PanelGroup>
 				  <hr/>
+				  	<Instructions/>
+				  	<History/>
 				  </div>
 				);
 			  }
