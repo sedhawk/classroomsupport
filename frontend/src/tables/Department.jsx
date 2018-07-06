@@ -39,13 +39,13 @@ renderEditable(cellInfo) {
           data={data}
           columns={[
             {
-              	Header: "Department Name",
-              	accessor: "departmentName",
+              	Header: "College",
+              	accessor: "college",
               	Cell: this.renderEditable
             },
             {
-              	Header: "College",
-              	accessor: "college",
+              	Header: "Department Name",
+              	accessor: "departmentName",
               	Cell: this.renderEditable
             }
           ]}

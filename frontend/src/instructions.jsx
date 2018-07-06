@@ -16,7 +16,7 @@ class Instructions extends Component {
 		
 		const textArea = (
 			<div>
-				<textarea className="text-area-notes">Shiz rizzle metus crackalackin arcu the bizzle fizzle. Gizzle posuere. Sizzle nizzle ante.</textarea>
+				<textarea rows="5" className="text-area-notes">Shiz rizzle metus crackalackin arcu the bizzle fizzle. Gizzle posuere. Sizzle nizzle ante.</textarea>
 			</div>
 		);
 

@@ -66,7 +66,7 @@ class Finder extends React.Component {
 				<div>
 					<Grid>
 						<Row className="App-left">
-							<Col xs={6} md={8}>
+							<Col xs={6} md={6}>
 						  		{ buttonsInstance }
 							</Col>
 							<Col xs={6} md={4}>
@@ -230,8 +230,8 @@ class Finder extends React.Component {
 					</Panel>
 				  </PanelGroup>
 				  <hr/>
-				  	<Instructions/>
-				  	<History/>
+				  <Instructions/>
+				  <History/>
 				  </div>
 				);
 			  }
