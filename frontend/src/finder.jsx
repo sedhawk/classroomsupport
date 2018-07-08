@@ -232,6 +232,7 @@ class Finder extends React.Component {
 				  <hr/>
 				  <Instructions/>
 				  <History/>
+				  <Button className="arrow-button">Building</Button>
 				  </div>
 				);
 			  }
