@@ -17,7 +17,7 @@ body {
 	text-align: right;
  }
 
- .navbar-nav{
+ .a{
 	line-height: 46px;
 }
 
@@ -30,19 +30,6 @@ body {
  .text-area-notes {
 	 width: 100%;
  }
-
-.arrow-button {
-	background: #555; 
-	background: linear-gradient(-135deg, transparent 22px, #555 0) top right,
-				linear-gradient(-45deg, transparent 22px, #555 0) bottom right;
-	background-size: 100% 50%; 
-	background-repeat: no-repeat;
-	font-family: helvetica;
-	padding: 10px;
-	font-size:20px;
-	color: #fff;
-	line-height: 90px;
-}
 
 .react-switch { 
 	vertical-align: middle;

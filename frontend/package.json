@@ -8,6 +8,7 @@
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",
     "react-layout-components": "^3.0.6",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "react-switch": "^3.0.4",
     "react-table": "^6.8.6",

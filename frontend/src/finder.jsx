@@ -7,6 +7,7 @@ import { TimeStamp } from './TimeStamp';
 import { Pictures }from './Pictures';
 import { Instructions } from './Instructions';
 import { History } from './History';
+import { Breadcrumb } from './Breadcrumb';
 import { Devices } from './tables/Devices';
 import { Person } from './tables/Person';
 import { DeviceType } from './tables/DeviceType';
@@ -232,7 +233,7 @@ class Finder extends React.Component {
 				  <hr/>
 				  <Instructions/>
 				  <History/>
-				  <Button className="arrow-button">Building</Button>
+				  <Breadcrumb/>
 				  </div>
 				);
 			  }
