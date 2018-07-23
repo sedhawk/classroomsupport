@@ -40,7 +40,7 @@ class Finder extends React.Component {
 
 		this.handleSelect = this.handleSelect.bind(this);
 		this.state = {
-			activeKey: '1',
+			activeKey: 'null',
 		};
 	  }
 

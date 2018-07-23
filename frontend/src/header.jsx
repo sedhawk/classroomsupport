@@ -1,5 +1,7 @@
 import React from 'react';
 import { Nav, Navbar, NavItem, NavDropdown, MenuItem, FormGroup, FormControl } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 
 export class Header extends React.Component {
 	render()  {
@@ -9,12 +11,12 @@ export class Header extends React.Component {
 					<Navbar>
 			  			<Navbar.Header>
 							<Navbar.Brand>
-			  					<a href="#home">Home</a>
+                                <Link to='/'>Home</Link>
 							</Navbar.Brand>
 		  				</Navbar.Header>
 		  				<Nav>
 							<NavItem eventKey={1} href="#">
-			  					Remediations
+								<Link to='/remediations'>Remediations</Link>
 							</NavItem>
 							<NavItem eventKey={2} href="#">
 			  					Messages
@@ -28,8 +30,8 @@ export class Header extends React.Component {
 							</NavDropdown>
 	  					</Nav>
 						<Nav pullRight>
-						  <NavItem className="a" eventKey={1} href="#">
-							Admin
+						  <NavItem className="a" eventKey={1}>
+							<Link to='/admin'>Admin</Link>
 						  </NavItem>
 						  <NavItem eventKey={2}>
 							  <FormGroup>
@@ -37,9 +39,9 @@ export class Header extends React.Component {
 							  </FormGroup>	
 						 </NavItem>
 						</Nav>
-					</Navbar>	
+					</Navbar>
 			</header>
-			)
+			);
 		}
 	}
 
