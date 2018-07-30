@@ -1,20 +1,22 @@
 import React from 'react';
 import { Grid, Row, Col, Label, Button, ButtonToolbar, Panel, PanelGroup } from 'react-bootstrap';
-import Box from 'react-layout-components';
-import { EditSwitch } from './editSwitch';
+//import Box from 'react-layout-components';
+//import { EditSwitch } from './editSwitch';
 import { HiddenSection } from './HiddenSection';
 import { TimeStamp } from './TimeStamp';
-import { Pictures }from './Pictures';
+import {ReportForm} from './reportform.jsx';
+//import { Pictures }from './Pictures';
 import { Instructions } from './Instructions';
 import { History } from './History';
 import { Breadcrumb } from './Breadcrumb';
 import { Devices } from './tables/Devices';
 import { Person } from './tables/Person';
 import { DeviceType } from './tables/DeviceType';
-import { Department } from './tables/Department';
+import { NewDepartment } from './tables/NewDepartment';
 import { RoomType } from './tables/RoomType';
 import { Vendor } from './tables/Vendor';
 import { Program } from './tables/Program';
+import './App.css';
 
 class Finder extends React.Component { 
 	
@@ -64,18 +66,19 @@ class Finder extends React.Component {
 			); 
 		
 			return (
-				<div>
+				<div className="App">
+                    <ReportForm/>
 					<Grid>
-						<Row className="App-left">
-							<Col xs={6} md={6}>
+						<Row >
+							<Col xs={6} md={12}>
 						  		{ buttonsInstance }
 							</Col>
-							<Col xs={6} md={4}>
+							{/*<Col xs={6} md={12}>
 								<EditSwitch
 									checked={this.state.checked}
 									className="react-switch"
 								/>
-							</Col>
+							</Col>*/}
 					  	</Row>
 					</Grid>
 
@@ -92,11 +95,7 @@ class Finder extends React.Component {
 							<Panel.Title toggle>Department</Panel.Title>
 					  	</Panel.Heading>
 						<Panel.Body collapsible>
-							<Department/>
-							<select>
-								<option>DeptName</option>
-							</select>
-							<Button bsStyle="primary" bsSize="xsmall">+</Button>
+							<NewDepartment/>
 							<HiddenSection hiddenText="..." visibleText="_">
 								<TimeStamp/>
 							</HiddenSection>		

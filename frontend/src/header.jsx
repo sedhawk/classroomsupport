@@ -15,25 +15,28 @@ export class Header extends React.Component {
 							</Navbar.Brand>
 		  				</Navbar.Header>
 		  				<Nav>
-							<NavItem eventKey={1} href="#">
+                            <NavItem eventKey={1} href="#">
+                                <Link to='/quality_assurance'>Quality Assurance</Link>
+                            </NavItem>
+							<NavItem eventKey={2} href="#">
 								<Link to='/remediations'>Remediations</Link>
 							</NavItem>
-							<NavItem eventKey={2} href="#">
+							<NavItem eventKey={3} href="#">
 			  					Messages
 							</NavItem>
-							<NavDropdown eventKey={3} title="Account Settings" id="basic-nav-dropdown">
-							  <MenuItem eventKey={3.1}>Action</MenuItem>
-							  <MenuItem eventKey={3.2}>Another action</MenuItem>
-							  <MenuItem eventKey={3.3}>Something else here</MenuItem>
+							<NavDropdown eventKey={4} title="Account Settings" id="basic-nav-dropdown">
+							  <MenuItem eventKey={4.1}>Action</MenuItem>
+							  <MenuItem eventKey={4.2}>Another action</MenuItem>
+							  <MenuItem eventKey={4.3}>Something else here</MenuItem>
 							  <MenuItem divider />
-							  <MenuItem eventKey={3.4}>Separated link</MenuItem>
+							  <MenuItem eventKey={4.4}>Separated link</MenuItem>
 							</NavDropdown>
 	  					</Nav>
 						<Nav pullRight>
-						  <NavItem className="a" eventKey={1}>
+						  <NavItem className="a" eventKey={5}>
 							<Link to='/admin'>Admin</Link>
 						  </NavItem>
-						  <NavItem eventKey={2}>
+						  <NavItem eventKey={6}>
 							  <FormGroup>
 								<FormControl type="text" placeholder="Search" />
 							  </FormGroup>	
