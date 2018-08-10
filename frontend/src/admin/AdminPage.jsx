@@ -8,11 +8,11 @@ import { Vendor } from './Vendor';
 import { Program } from './Program';
 
 // Import React Table
-import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 
 // Import tables
 import { Department } from './Department';
+import { Location } from "./Location";
 
 class AdminPage extends Component {
 
@@ -31,6 +31,14 @@ class AdminPage extends Component {
 
   render() {
     const { data } = this.state;
+
+      let alignCenter = {
+          position: "fixed",
+          fontSize: "16px",
+          paddingTop: "10px"
+
+      };
+
     return (
       <div>
         <PanelGroup
@@ -39,7 +47,21 @@ class AdminPage extends Component {
             activeKey={this.state.activeKey}
             onSelect={this.handleSelect}
             className="panel-width"
+            style={alignCenter}
         >
+            {/* Location */}
+            <Panel eventKey="0">
+                <Panel.Heading>
+                    <Panel.Title toggle>All Rooms</Panel.Title>
+                </Panel.Heading>
+                <Panel.Body collapsible>
+                    <Location/>
+                    <HiddenSection hiddenText="..." visibleText="_">
+                        <TimeStamp/>
+                    </HiddenSection>
+                </Panel.Body>
+            </Panel>
+
             {/* DEPARTMENT */}
                 <Panel eventKey="1">
                     <Panel.Heading>
@@ -47,10 +69,6 @@ class AdminPage extends Component {
                     </Panel.Heading>
                     <Panel.Body collapsible>
                         <Department/>
-                        <select>
-                            <option>DeptName</option>
-                        </select>
-                        <Button bsStyle="primary" bsSize="xsmall">+</Button>
                         <HiddenSection hiddenText="..." visibleText="_">
                             <TimeStamp/>
                         </HiddenSection>
@@ -64,8 +82,6 @@ class AdminPage extends Component {
                     </Panel.Heading>
                     <Panel.Body collapsible>
                         <Devices/>
-                        <select><option>DeptName</option></select>
-                        <Button bsStyle="primary" bsSize="xsmall">+</Button>
                         <HiddenSection hiddenText="..." visibleText="_">
                             <TimeStamp/>
                         </HiddenSection>
@@ -75,14 +91,10 @@ class AdminPage extends Component {
             {/* ROOM TYPE */}
                 <Panel eventKey="2">
                     <Panel.Heading>
-                        <Panel.Title toggle>Room Type</Panel.Title>
+                        <Panel.Title toggle>Room Types</Panel.Title>
                     </Panel.Heading>
                     <Panel.Body collapsible>
                         <RoomType/>
-                        <select>
-                            <option>collaboration lab</option>
-                        </select>
-                        <Button bsStyle="primary" bsSize="xsmall">+</Button>
                         <HiddenSection hiddenText="..." visibleText="_">
                             <TimeStamp/>
                         </HiddenSection>
@@ -92,15 +104,10 @@ class AdminPage extends Component {
             {/* VENDOR */}
                 <Panel eventKey="6">
                     <Panel.Heading>
-                        <Panel.Title toggle>Vendor</Panel.Title>
+                        <Panel.Title toggle>Vendors</Panel.Title>
                     </Panel.Heading>
                     <Panel.Body collapsible>
                         <Vendor/>
-                        <select>
-                            <option>Troxel</option><option>CCS</option>
-                            <option>In House</option>
-                        </select>
-                        <Button bsStyle="primary" bsSize="xsmall">+</Button>
                         <HiddenSection hiddenText="..." visibleText="_">
                             <TimeStamp/>
                         </HiddenSection>

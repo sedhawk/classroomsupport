@@ -5,9 +5,14 @@ import { Link } from 'react-router-dom';
 
 export class Header extends React.Component {
 	render()  {
+
+	    let centerText = {
+	        textAlign: "center"
+        };
+
 		return  (
 			<header className="App-header">
-				<h1 className="App-title">Classroom Support Inventory and Maintenance</h1>
+				<h1 style={centerText} className="App-title">Classroom Support Inventory and Maintenance</h1>
 					<Navbar>
 			  			<Navbar.Header>
 							<Navbar.Brand>

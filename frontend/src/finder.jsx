@@ -12,7 +12,7 @@ import { Breadcrumb } from './Breadcrumb';
 import { Devices } from './tables/Devices';
 import { Person } from './tables/Person';
 import { DeviceType } from './tables/DeviceType';
-import { NewDepartment } from './tables/NewDepartment';
+import { Department } from './tables/Department';
 import { RoomType } from './tables/RoomType';
 import { Vendor } from './tables/Vendor';
 import { Program } from './tables/Program';
@@ -95,7 +95,7 @@ class Finder extends React.Component {
 							<Panel.Title toggle>Department</Panel.Title>
 					  	</Panel.Heading>
 						<Panel.Body collapsible>
-							<NewDepartment/>
+							<Department/>
 							<HiddenSection hiddenText="..." visibleText="_">
 								<TimeStamp/>
 							</HiddenSection>		
@@ -109,10 +109,6 @@ class Finder extends React.Component {
 						</Panel.Heading>
 						<Panel.Body collapsible>
 							<RoomType/>
-							<select>
-								<option>collaboration lab</option>
-							</select>
-							<Button bsStyle="primary" bsSize="xsmall">+</Button>
 							<HiddenSection hiddenText="..." visibleText="_">
 								<TimeStamp/>
 							</HiddenSection>		

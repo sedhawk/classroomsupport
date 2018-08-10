@@ -1,57 +1,126 @@
+/* eslint no-unused-vars: 0 */
+/* eslint no-console: 0 */
+/* eslint space-infix-ops: 0 */
+/* eslint max-len: 0 */
+
 import React, { Component } from "react";
-import { makeData, Tips } from "../tables/Utils";
 
 // Import React Table
-import ReactTable from "react-table";
 import "react-table/react-table.css";
+import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+
+const roomType = [];
+
+function addRoomType(type) {
+    const startId = roomType.length;
+
+    let roomTypes = [   'classroom',
+                        'clab',
+                        'conference',
+                        'lab',
+                        'office',
+                        'theater',
+                        'shop'
+    ];
+
+    for (let i=0; i < type; i++) {
+        const id = startId + i;
+        roomType.push({
+            id: id,
+            roomType: roomTypes[i]
+        });
+    }
+}
+
+addRoomType(7);
+
+function onRowSelect(row, isSelected) {
+    console.log(row);
+    console.log(`selected: ${isSelected}`);
+}
+
+function onSelectAll(isSelected) {
+    console.log(`is select all: ${isSelected}`);
+}
+
+function onAfterSaveCell(row, cellName, cellValue) {
+    console.log(`Save cell ${cellName} with value ${cellValue}`);
+    console.log('The whole row :');
+    console.log(row);
+}
+
+function onAfterTableComplete() {
+    console.log('Table render complete.');
+}
+
+function onAfterDeleteRow(rowKeys) {
+    console.log('onAfterDeleteRow');
+    console.log(rowKeys);
+}
+
+function onAfterInsertRow(row) {
+    console.log('onAfterInsertRow');
+    console.log(row);
+}
+
+const selectRowProp = {
+    mode: 'checkbox',
+    clickToSelect: true,
+    selected: [], // default select on table
+    bgColor: 'rgb(238, 193, 213)',
+    onSelect: onRowSelect,
+    onSelectAll: onSelectAll
+};
+
+const cellEditProp = {
+    mode: 'click',
+    blurToSave: true
+};
+
+// validator function pass the user input value and should return true|false.
+function valid(value) {
+    const response = { isValid: true, notification: { type: 'success', msg: '', title: '' } };
+    if (!value) {
+        response.isValid = false;
+        response.notification.type = 'error';
+        response.notification.msg = 'Value must be inserted';
+        response.notification.title = 'Requested Value';
+    } else if (value.length < 1) {
+        response.isValid = false;
+        response.notification.type = 'error';
+        response.notification.msg = 'Must have valid characters';
+        response.notification.title = 'Invalid Value';
+    }
+    return response;
+}
 
 class RoomType extends Component {
-  constructor() {
-    super();
-    this.state = {
-      data: makeData()
-    };
-    this.renderEditable = this.renderEditable.bind(this);
-  }
 
-renderEditable(cellInfo) {
-    return (
-      <div
-        style={{ backgroundColor: "#fafafa" }}
-        contentEditable
-        suppressContentEditableWarning
-        onBlur={e => {
-          const data = [...this.state.data];
-          data[cellInfo.index][cellInfo.column.id] = e.target.innerHTML;
-          this.setState({ data });
-        }}
-        dangerouslySetInnerHTML={{
-          __html: this.state.data[cellInfo.index][cellInfo.column.id]
-        }}
-      />
-    );
-  }
-  render() {
-    const { data } = this.state;
-    return (
-      <div>
-        <ReactTable
-          data={data}
-          columns={[
-            {
-              	Header: "Room Type",
-              	accessor: "roomType",
-              	Cell: this.renderEditable
-            }
-          ]}
-          defaultPageSize={5}
-          className="-striped -highlight"
-        />
-        <br />
-        <Tips />
-      </div>
-    );
-  }
+      render() {
+          return (
+              <BootstrapTable data={ roomType }
+                              selectRow={ selectRowProp }
+                              cellEdit={ cellEditProp }
+                              insertRow
+                              deleteRow
+                              hover
+              >
+                  <TableHeaderColumn dataField='id'
+                                     dataAlign='center'
+                                     dataSort isKey hidden autoValue>ID</TableHeaderColumn>
+
+                  <TableHeaderColumn dataField='roomType'
+                                     headerAlign='center'
+                                     dataSort
+                                     editable={ {
+                                         type: 'textarea',
+                                         validator: valid } }>
+                      Room Type
+                  </TableHeaderColumn>
+
+              </BootstrapTable>
+          );
+      }
 }
 
 export { RoomType }

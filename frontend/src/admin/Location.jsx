@@ -6,28 +6,29 @@
 import React, { Component } from 'react';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 
-const dept = [];
+const campus = [];
 
-function addDept(name) {
-    const startId = dept.length;
+function addCampus(type) {
+    const startId = campus.length;
 
-    let department = [ 'CEFNS',
-        'English',
-        'Music',
-        'Extended Campuses'
+    let campus_type = [ 'North',
+                        'South',
+                        'Extended',
+                        'Other'
     ];
 
-    for (let i = 0; i < name; i++) {
+    for (let i = 0; i < type; i++) {
         const id = startId + i;
-        dept.push({
+        campus.push({
             id: id,
-            college: department[i],
-            deptName: ""
+            name: campus_type[i],
+            building: "",
+            room: ""
         });
     }
 }
 
-addDept(4);
+addCampus(4);
 
 function onRowSelect(row, isSelected) {
     console.log(row);
@@ -73,7 +74,7 @@ const cellEditProp = {
 };
 
 // validator function pass the user input value and should return true|false.
-function valid(value) {
+function jobNameValidator(value) {
     const response = { isValid: true, notification: { type: 'success', msg: '', title: '' } };
     if (!value) {
         response.isValid = false;
@@ -90,40 +91,52 @@ function valid(value) {
 }
 
 
-class Department extends Component {
+class Location extends Component {
+
+    invalidJobStatus = (cell, row) => {
+        console.log(`${cell} at row id: ${row.id} fails on editing`);
+        return 'invalid-jobstatus-class';
+    }
+
+    editingJobStatus = (cell, row) => {
+        console.log(`${cell} at row id: ${row.id} in current editing`);
+        return 'editing-jobstatus-class';
+    }
+
     render() {
         return (
-            <BootstrapTable data={ dept }
+            <BootstrapTable data={ campus }
                             selectRow={ selectRowProp }
                             cellEdit={ cellEditProp }
                             insertRow
                             deleteRow
                             hover
             >
-                <TableHeaderColumn dataField='id'
-                                   dataAlign='center'
-                                   dataSort isKey hidden autoValue>ID</TableHeaderColumn>
-
-                <TableHeaderColumn dataField='college'
-                                   dataAlign='center'
-                                   dataSort
-                                   editable={ {
-                                       type: 'textarea',
-                                       validator: valid } }>
-                    College
+                <TableHeaderColumn dataField='id' isKey hidden autoValue>ID</TableHeaderColumn>
+                <TableHeaderColumn dataAlign='center'
+                                   dataField='name'
+                                   editable={ { type: 'textarea', validator: jobNameValidator } }
+                                   editColumnClassName='editing-jobsname-class'
+                                   invalidEditColumnClassName='invalid-jobsname-class'>
+                    Campus Type
                 </TableHeaderColumn>
-                <TableHeaderColumn dataField='deptName'
-                                   dataSort
-                                   editable={ {
-                                       type: 'textarea',
-
-                                       validator: valid } }>
-                    Department Name
+                <TableHeaderColumn dataAlign='center'
+                                   dataField='building'
+                                   editable={ { type: 'textarea', validator: jobNameValidator } }
+                                   editColumnClassName='editing-jobsname-class'
+                                   invalidEditColumnClassName='invalid-jobsname-class'>
+                    Building
                 </TableHeaderColumn>
-
+                <TableHeaderColumn dataAlign='center'
+                                   dataField='room'
+                                   editable={ { type: 'textarea', validator: jobNameValidator } }
+                                   editColumnClassName='editing-jobsname-class'
+                                   invalidEditColumnClassName='invalid-jobsname-class'>
+                    Room
+                </TableHeaderColumn>
             </BootstrapTable>
         );
     }
 }
 
-export { Department }
+export { Location}

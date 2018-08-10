@@ -12,8 +12,9 @@ class ReportForm extends React.Component {
 		let style = {
 			display: 'flex',
 			flexDirection: 'column',
-			minWidth: '100px',
-			padding: '15px'
+			//minWidth: '100px',
+			padding: '15px',
+			textAlign: 'center'
 		}
 		return (
 			<div style={style}>
@@ -34,7 +35,8 @@ class ReportForm extends React.Component {
 	render() {
 		let style = {
 			display: 'flex',
-			flexDirection: 'row'
+			flexDirection: 'row',
+            textAlign: 'center'
 		}
 		const BUTTONS = ['Campus Type', 'Building', 'Room', 'Programs', 'Devices', 'Device Type', 'Vendor', 'Room Type', 'Operating System', 'Computer', 'Person', 'Department'];
 		const buttonsInstance = (
