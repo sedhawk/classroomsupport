@@ -104,6 +104,33 @@ class APIEndpoint
 
 	function updateRecords($data)
 	{
+		$query = "UPDATE * FROM $this->table" . "ID = '$id'";
+
+		if($id)
+		{
+			$query .= " WHERE $this->table" . "ID = '$id'";
+		}
+
+		$statement = $this->pdo->query($query);
+		$resultJSON = json_encode($statement->fetchAll(PDO::FETCH_ASSOC));
+		print $resultJSON;		
+
+	}
+
+	function deleteRecord($data)
+	{
+		$id = $data['id'];
+
+		$query = "DELETE FROM $this->table";
+
+		if($id)
+		{
+			$query .=" WHERE $this->table" . "ID = '$id'"; // TODO
+		}
+
+		$statement = $this->pdo->query($query);
+		$resultJSON = json_encode($statement->fetchAll(PDO::FETCH_ASSOC));
+		print $resultJSON;		
 	}
 
 	function handleRequest()

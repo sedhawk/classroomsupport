@@ -1,0 +1,10 @@
+<?php
+class Data
+{
+	public static $host='localhost';
+	public static $port='3306';
+	public static $db='DB name here';
+	public static $user='username';
+	public static $pass='password';
+}
+?>
