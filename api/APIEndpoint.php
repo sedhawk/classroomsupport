@@ -122,6 +122,7 @@ class APIEndpoint
 		$id = $data['id'];
 
 		$query = "DELETE FROM $this->table";
+
 		if($id)
 		{
 			$query .=" WHERE $this->table" . "ID = '$id'";
