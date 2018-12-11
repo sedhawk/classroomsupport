@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 
-const campus = [];
+let campus = [];
 
 function addCampus(type) {
     const startId = campus.length;
@@ -28,7 +28,7 @@ function addCampus(type) {
     }
 }
 
-addCampus(4);
+//addCampus(4);
 
 function onRowSelect(row, isSelected) {
     console.log(row);
@@ -93,28 +93,51 @@ function jobNameValidator(value) {
 
 class Location extends Component {
 
+    /*componentWillReceiveProps(nextProps){
+        campus = [];
+        nextProps.campusTypes.forEach(
+            campusTypes => campus.push(campusTypes)
+        )
+    }*/
+
     invalidJobStatus = (cell, row) => {
         console.log(`${cell} at row id: ${row.id} fails on editing`);
         return 'invalid-jobstatus-class';
-    }
+    };
 
     editingJobStatus = (cell, row) => {
         console.log(`${cell} at row id: ${row.id} in current editing`);
         return 'editing-jobstatus-class';
-    }
+    };
 
     render() {
+        const rooms = [];
+
+        if (this.props.rooms && this.props.buildings && this.props.campusTypes) {
+            this.props.rooms.forEach((room) => {
+                const building = this.props.buildings.find(building => building.buildingID == room.buildingID);
+                const campus = this.props.campusTypes.find(campus => campus.campusID == building.campusID);
+
+                rooms.push({
+                    id: room.roomID, // room id
+                    campus_type: campus.campus_type,// campus type name
+                    building: building.building_name,
+                    room: room.room_number
+                });
+            });
+        }
+
         return (
-            <BootstrapTable data={ campus }
+            <BootstrapTable data={ rooms }
                             selectRow={ selectRowProp }
                             cellEdit={ cellEditProp }
                             insertRow
                             deleteRow
                             hover
             >
-                <TableHeaderColumn dataField='id' isKey hidden autoValue>ID</TableHeaderColumn>
+                <TableHeaderColumn dataField='campusID' isKey hidden autoValue>ID</TableHeaderColumn>
                 <TableHeaderColumn dataAlign='center'
-                                   dataField='name'
+                                   dataField='campus_type'
                                    editable={ { type: 'textarea', validator: jobNameValidator } }
                                    editColumnClassName='editing-jobsname-class'
                                    invalidEditColumnClassName='invalid-jobsname-class'>

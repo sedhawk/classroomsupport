@@ -13,6 +13,7 @@ import 'react-table/react-table.css';
 // Import tables
 import { Department } from './Department';
 import { Location } from "./Location";
+import * as axios from "axios";
 
 class AdminPage extends Component {
 
@@ -22,11 +23,45 @@ class AdminPage extends Component {
         this.handleSelect = this.handleSelect.bind(this);
         this.state = {
             activeKey: 'null',
+            campusTypes: []
         };
     }
 
     handleSelect(activeKey) {
         this.setState({ activeKey });
+    }
+
+    saveRoom = (newRoom) => {
+        console.log('TODO: save to db');
+        console.log(newRoom);
+    };
+
+    getCampusTypes() {
+        return axios.get('api/crud.php?dataset=campus');
+    }
+
+    getBuildings() {
+        return axios.get('api/crud.php?dataset=building');
+    }
+
+    getRooms() {
+        return axios.get('api/crud.php?dataset=room');
+    }
+
+    componentDidMount() {
+        axios.all([
+            this.getCampusTypes(),
+            this.getBuildings(),
+            this.getRooms()
+        ])
+        .then(axios.spread((campusTypes, buildings, rooms) => {
+            this.setState({
+                campusTypes: campusTypes.data.slice(),
+                buildings: buildings.data.slice(),
+                rooms: rooms.data.slice(),
+                onNewRoom: this.saveRoom
+            });
+        }));
     }
 
   render() {
@@ -49,13 +84,17 @@ class AdminPage extends Component {
             className="panel-width"
             style={alignCenter}
         >
-            {/* Location */}
+            {/* All Rooms */}
             <Panel eventKey="0">
                 <Panel.Heading>
                     <Panel.Title toggle>All Rooms</Panel.Title>
                 </Panel.Heading>
                 <Panel.Body collapsible>
-                    <Location/>
+                    <Location
+                        campusTypes={this.state.campusTypes}
+                        buildings={this.state.buildings}
+                        rooms={this.state.rooms}
+                    />
                     <HiddenSection hiddenText="..." visibleText="_">
                         <TimeStamp/>
                     </HiddenSection>
