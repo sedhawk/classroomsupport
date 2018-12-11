@@ -125,7 +125,7 @@ class APIEndpoint
 
 		if($id)
 		{
-			$query .=" WHERE $this->table" . "ID = '$id'";
+			$query .=" WHERE $this->table" . "ID = '$id'"; // TODO
 		}
 
 		$statement = $this->pdo->query($query);
